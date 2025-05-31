@@ -1,0 +1,245 @@
+/* Paso 2: Selectores y Especificidad */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Color de fondo del body*/
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  color: rgb(44, 30, 30); /* Selector de etiqueta*/
+}
+
+.resaltar {
+  color: red; /* Selector de clase, más específico*/
+}
+
+#caja-especial {
+  color: green; /* Selector de ID, el más específico*/
+}
+
+/* Paso 3 y 4: Modelo de Caja y Personalización Visual */
+.caja {
+  background-color: #ffffff; /* Fondo blanco para las cajas*/
+  border: 2px solid #000; /* Borde sólido negro*/
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Sombra para las cajas*/
+  padding: 20px; /* Espacio interno*/
+  margin: 10px auto; /* Margen externo, centrado*/
+  width: 80%;
+  max-width: 400px;
+  box-sizing: border-box; /* Incluye padding y border en el width */
+  text-align: center;
+}
+
+.seccion-contenido,
+.seccion-efectos-visuales,
+.ejemplo-disposicion {
+  width: 90%; /* Ancho del contenedor*/
+  max-width: 600px;
+  padding: 20px; /* Padding interno*/
+  margin: 20px auto; /* Margen externo, centrado*/
+  border: 3px solid #ccc; /* Borde para la sección*/
+  background-color: #e9e9e9;
+  border-radius: 8px;
+}
+
+header,
+footer {
+  background-color: rgb(68, 78, 60);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Paso 5: Display y Position */
+.ejemplo-bloque-en-linea {
+  display: inline-block; /* Elementos en línea con propiedades de bloque*/
+  width: 100px; /* Ancho*/
+  height: 100px; /* Alto*/
+  background-color: lightblue; /* Color de fondo*/
+  margin: 10px;
+  text-align: center;
+  line-height: 100px; /* Centra el texto verticalmente */
+}
+
+.elemento-fijo {
+  position: fixed; /* Posición fija en la ventana*/
+  top: 20px; /* A 20px del top*/
+  right: 20px; /* A 20px de la derecha*/
+  background-color: rgb(193, 255, 142); /* Fondo rojo*/
+  color: white;
+  padding: 10px; /* Espacio interno*/
+  border-radius: 5px;
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Paso 6: Efectos Visuales (Transformaciones, Pseudoclases, Pseudoelementos y Animaciones) */
+.girar-elemento {
+  width: 200px; /* Ancho*/
+  height: 100px; /* Alto*/
+  background-color: rgb(193, 255, 142); /* Fondo amarillo*/
+  transform: rotate(45deg); /* Rotación de 45 grados*/
+  margin: 20px auto;
+  text-align: center;
+  line-height: 100px;
+  transition: transform 0.5s ease; /* Transición suave para la rotación */
+}
+
+.girar-elemento:hover {
+  transform: rotate(90deg) scale(1.1); /* Efecto al pasar el ratón */
+}
+
+.enlace-interactivo {
+  display: inline-block;
+  color: rgb(163, 49, 64);
+  text-decoration: none;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.enlace-interactivo:hover {
+  color: rgb(44, 59, 32); /* Cambio de color al pasar el ratón*/
+  text-decoration: underline; /* Subrayado al pasar el ratón*/
+}
+
+.caja::before {
+  content: "¡Nuevo! "; /* Contenido antes del elemento*/
+  color: purple; /* Color del texto*/
+  font-weight: bold; /* Negrita*/
+  font-size: 0.8em;
+}
+
+/* Animación */
+h1 {
+  animation: aparecerSuavemente 2s ease-in-out; /* Aplicar animación al h1*/
+}
+
+@keyframes aparecerSuavemente {
+  0% {
+    opacity: 0; /* Opacidad inicial 0*/
+  }
+  100% {
+    opacity: 1; /* Opacidad final 1*/
+  }
+}
+
+/* Nuevo estilo para la sección de productos */
+.seccion-lista-productos {
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  margin: 20px auto;
+  border: 3px solid #ffffff;
+  background-color: rgb(68, 78, 60);
+  border-radius: 8px;
+  text-align: center;
+}
+.seccion-lista-productos h2 {
+  color: rgb(231, 253, 212);
+}
+.contenedor-productos {
+  display: flex; /* Usamos flexbox para organizar los productos */
+  flex-wrap: wrap; /* Permite que los productos se envuelvan a la siguiente línea */
+  justify-content: center; /* Centra los productos horizontalmente */
+  gap: 20px; /* Espacio entre los productos */
+  margin-top: 20px;
+}
+
+.item-producto {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: inline-block;
+  width: calc(
+    33% - 40px
+  ); /* Aproximadamente 3 productos por fila, ajustando el gap */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Incluye padding y border en el width */
+  text-align: left; /* Alinea el texto a la izquierda dentro de cada item */
+}
+
+.item-producto h3 {
+  color: rgb(87, 114, 64);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.item-producto .descripcion {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.item-producto .precio {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.1em;
+  text-align: center;
+}
+.item-producto .texto-precio {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Media query para hacer los productos responsivos en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .item-producto {
+    width: calc(50% - 30px); /* 2 productos por fila en tabletas */
+  }
+}
+
+@media (max-width: 480px) {
+  .item-producto {
+    width: 100%; /* 1 producto por fila en móviles */
+  }
+}
+
+.boton-comprar {
+  display: block;
+  margin: auto;
+  background-color: rgb(193, 255, 142);
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.boton-comprar:hover {
+  transform: scale(1.1);
+  background-color: rgb(163, 216, 121);
+}
+
+.boton-comprar:active {
+  transform: scale(0.95);
+}
+
+/* Ajustes para el contenedor del botón */
+.item-producto a {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  text-decoration: none;
+}
+
+.enlace-footer {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px;
+  width: 100px;
+  background-color: rgb(186, 218, 160);
+  border-radius: 20px;
+}
+.enlace-footer:hover {
+  transition: transform 1.4s ease;
+  transform: scale(1.1);
+  background-color: rgb(128, 145, 115);
+  color: rgb(255, 255, 255);
+}
